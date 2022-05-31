@@ -8,7 +8,7 @@
 html,
 body {
   height: 100%;
-  background-color: #fee2be;
+  background-color: #c5a57c;
 }
 
 .Loading-page {
@@ -116,7 +116,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: #c5a57c;
+  background-color: #fee2be;
   padding: 60px 80px;
   border-radius: 15px;
 }
