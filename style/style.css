@@ -77,7 +77,7 @@ body {
   }
 }
 
-.signup-page {
+.bodyContainer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -89,7 +89,7 @@ body {
           align-items: center;
 }
 
-.signup-page header {
+.bodyContainer header {
   background-image: url("../images/navbar.png");
   background-repeat: repeat-x;
   height: 80px;
@@ -98,11 +98,11 @@ body {
   top: 0;
 }
 
-.signup-page #signUpDiv {
+.bodyContainer #signUpDiv {
   display: none;
 }
 
-.signup-page .container {
+.bodyContainer .container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -121,7 +121,7 @@ body {
   border-radius: 15px;
 }
 
-.signup-page .container .SwitchBtn {
+.bodyContainer .container .SwitchBtn {
   width: 90%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -131,7 +131,7 @@ body {
           justify-content: space-between;
 }
 
-.signup-page .container .SwitchBtn button {
+.bodyContainer .container .SwitchBtn button {
   list-style: none;
   display: inline-block;
   padding: 10px;
@@ -141,7 +141,7 @@ body {
   position: relative;
 }
 
-.signup-page .container .SwitchBtn button::after {
+.bodyContainer .container .SwitchBtn button::after {
   content: "";
   width: 100%;
   position: absolute;
@@ -158,20 +158,20 @@ body {
   border-bottom: 3px solid #000000;
 }
 
-.signup-page .container .SwitchBtn button:hover::after {
+.bodyContainer .container .SwitchBtn button:hover::after {
   -webkit-transform: scale(1);
           transform: scale(1);
 }
 
-.signup-page .container img {
+.bodyContainer .container img {
   width: 150px;
 }
 
-.signup-page .container .LogoDiv {
+.bodyContainer .container .LogoDiv {
   margin: 10px;
 }
 
-.signup-page .container .InputDiv {
+.bodyContainer .container .InputDiv {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -181,8 +181,8 @@ body {
           flex-direction: column;
 }
 
-.signup-page .container .InputDiv input,
-.signup-page .container .InputDiv button {
+.bodyContainer .container .InputDiv input,
+.bodyContainer .container .InputDiv button {
   background: none;
   padding: 10px;
   margin-top: 10px;
