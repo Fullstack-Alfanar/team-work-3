@@ -8,6 +8,7 @@ $containerColor: #fee2be;
   padding: 0;
   font-family: "Playfair Display", serif;
 }
+
 html,
 body {
   height: 100%;
@@ -27,6 +28,7 @@ body {
       font-size: 22px;
       text-transform: uppercase;
     }
+
     .loader {
       box-sizing: border-box;
       width: 100%;
@@ -45,10 +47,12 @@ body {
     }
 
     @keyframes rotate {
+
       0%,
       100% {
         transform: scale(1) rotate(360deg);
       }
+
       50% {
         transform: scale(0.8) rotate(-360deg);
       }
@@ -60,6 +64,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+
   header {
     background-image: url("../images/navbar.png");
     background-repeat: repeat-x;
@@ -68,10 +73,13 @@ body {
     position: fixed;
     top: 0;
   }
+
   #signUpDiv {
     display: none;
   }
+
   .container {
+    z-index: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -79,6 +87,7 @@ body {
     background-color: $containerColor;
     padding: 60px 80px;
     border-radius: 15px;
+
     .SwitchBtn {
       width: 90%;
       display: flex;
@@ -93,6 +102,7 @@ body {
         font-size: larger;
         position: relative;
       }
+
       button::after {
         content: "";
         width: 100%;
@@ -104,19 +114,24 @@ body {
         transition: transform 0.4s ease;
         border-bottom: 3px solid #000000;
       }
+
       button:hover::after {
         transform: scale(1);
       }
     }
+
     img {
       width: 150px;
     }
+
     .LogoDiv {
       margin: 10px;
     }
+
     .InputDiv {
       display: flex;
       flex-direction: column;
+
       input,
       button {
         background: none;
@@ -126,6 +141,39 @@ body {
         border: 2px solid #000000;
         border-radius: 15px;
       }
+    }
+  }
+
+  .shelfImg {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    @media screen and (max-width: 1400px) {
+      display: none;
+    }
+
+    img {
+      width: 50%;
+      margin-left: 200px;
+      margin-bottom: 50px;
+    }
+  }
+
+  .nerdImg {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    @media screen and (max-width: 1400px) {
+      display: none;
+    }
+
+    img {
+      margin-right: 200px;
+      margin-bottom: 50px;
     }
   }
 }

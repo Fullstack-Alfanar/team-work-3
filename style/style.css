@@ -103,6 +103,7 @@ body {
 }
 
 .bodyContainer .container {
+  z-index: 1;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -189,5 +190,46 @@ body {
   font-size: large;
   border: 2px solid #000000;
   border-radius: 15px;
+}
+
+.bodyContainer .shelfImg {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+@media screen and (max-width: 1400px) {
+  .bodyContainer .shelfImg {
+    display: none;
+  }
+}
+
+.bodyContainer .shelfImg img {
+  width: 50%;
+  margin-left: 200px;
+  margin-bottom: 50px;
+}
+
+.bodyContainer .nerdImg {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+@media screen and (max-width: 1400px) {
+  .bodyContainer .nerdImg {
+    display: none;
+  }
+}
+
+.bodyContainer .nerdImg img {
+  margin-right: 200px;
+  margin-bottom: 50px;
 }
 /*# sourceMappingURL=style.css.map */
