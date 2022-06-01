@@ -8,15 +8,24 @@ $(document).ready(() => {
     $("#signInDiv").hide();
   });
   $("#dSignupBtn").click(() => {
-    if (checkUserName($("#uUserName"), $("#uEmail"))) {
-
-    }
+    checkUserName($("#uUserName"), $("#uEmail"))
+  });
+  $("#dSignInBtn").click(() => {
+    CheckUserExists($("#IEmail"), $("#IPassword"))
 
   })
-
 });
-/*signUp*/
 let usersArray = [];
+/*First Run */
+//sets data in the array from local storage whenever the page rerun
+function setData() {
+  if (localStorage.getItem("userList"))
+    usersArray = JSON.parse(localStorage.getItem("userList"));
+
+}
+setData();
+/*signUp*/
+
 var format = /[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
 var english = /^[A-Za-z0-9]*$/;
 //function for userName validation
@@ -131,7 +140,7 @@ function confirmPass(pass, errLabl) {
   } else {
     errLabl.hidden = "true";
     saveUser();
-    setToCookies();
+    setToCookies(document.getElementById("uEmail").value);
   }
 
 }
@@ -146,16 +155,27 @@ function saveUser() {
   }
   usersArray.push(obj);
   localStorage.setItem("userList", JSON.stringify(usersArray));
+  usersArray = JSON.parse(localStorage.getItem("userList"));
+
+
+}
+//saves data in the array for this page and in general for the other pages in a json file 
+function saveData() {
+  const fs = require('../Database/database.json');
+  fs.writeFile("database.json", localStorage.getItem("userList"), function (err) {
+    if (err) throw err;
+    console.log('complete');
+  }
+  );
 
 }
 // this function save logged in user to the cookies for 2 hours
 
-function setToCookies() {
-  let user = document.getElementById("uUserName").value;
+function setToCookies(email) {
   let d = new Date();
   d.setTime(d.getTime() + 2 * 60 * 60 * 1000);
   let expires = "expires=" + d.toUTCString();
-  document.cookie = "User =" + user + ";" + expires;
+  document.cookie = "Email =" + email + ";" + expires + ";path=/";
   window.location.replace("../pages/dashboard.html");
 }
 
@@ -169,25 +189,43 @@ function checkEnglishLetters(value) {
 }
 //search if the userName exists in the database 
 function searchUser(usr) {
-  if (localStorage.getItem("userList")) {
-    let users = JSON.parse(localStorage.getItem("userList"));
-    for (let i of users) {
-      if (i.UserName == usr)
-        return true;
-    }
+
+  for (let i of usersArray) {
+    if (i.UserName == usr)
+      return true;
   }
   return false;
 
 }
 //search if the email address exists in the database 
 function searchEmail(eml) {
-  if (localStorage.getItem("userList")) {
-    let users = JSON.parse(localStorage.getItem("userList"));
-    for (let i of users) {
-      if (i.Email == eml)
-        return true;
+
+  for (let i of usersArray) {
+    if (i.Email == eml)
+      return true;
+  }
+
+  return false;
+}
+
+/* sign in */
+//check if user's email exists in the database (local storage) if it is then check if the password is correct after that if it is correct it can sign in 
+function CheckUserExists(email, pass) {
+  let errLabel = document.getElementById("errMsgIn");
+  errLabel.style.color = "red";
+  if (searchEmail(email.val())) {
+    if (checkPass(pass.val(), email.val())) {
+      setToCookies(email.val());
+    } else errLabel.innerHTML = "Wrong Password";
+  } else errLabel.innerHTML = "User doesn't exists.";
+
+}
+
+function checkPass(pass, email) {
+  for (let i of usersArray) {
+    if (i.Password == pass && i.Email == email) {
+      return true;
     }
   }
   return false;
 }
-
