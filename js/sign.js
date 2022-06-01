@@ -7,23 +7,38 @@ $(document).ready(() => {
     $("#signUpDiv").show().css("display", "flex");
     $("#signInDiv").hide();
   });
+  $("#dSignupBtn").click(() => {
+    if (checkUserName($("#uUserName"), $("#uEmail"))) {
+
+    }
+
+  })
+
 });
 /*signUp*/
-let usersArray=[];
-var format = /^[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]*$/;
+let usersArray = [];
+var format = /[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
 var english = /^[A-Za-z0-9]*$/;
 //function for userName validation
 //This function first need to check if thi user name already exits in the database
 //, then it must be only in english and number no special characters
-function checkUserName() {
-  var userName = document.getElementById("uUserName");
-  let email=document.getElementById("uEmail");
-  if (!english.test(userName.value) || (userName.value.length < 3 && userName.value.length >= 30) || userName.value == "" && !searchUser(userName.value))
-    document.getElementById("errMsgUp").innerHTML = "Invalid username";
-  else if (checkEmail(email.value) && searchEmail(email.value))
-           checkPassword();
-  else document.getElementById("errMsgUp").innerHTML = "Invalid email";
-
+function checkUserName(userName, email) {
+  let errLabel = document.getElementById("errMsgUp");
+  errLabel.style.color = "red";
+  if (!english.test(userName.val()) || (userName.val().length < 3 && userName.val().length >= 15) || userName.val() == "") {
+    errLabel.innerHTML = "Invalid username";
+  }
+  else if (searchUser(userName.val())) {
+    errLabel.innerHTML = "Username Already exist";
+  }
+  else if (!checkEmail(email.val())) {
+    errLabel.innerHTML = "Invalid Email";
+  }
+  else if (searchEmail(email.val())) {
+    errLabel.innerHTML = "Email Already exist";
+  }
+  else
+    checkPassword();
 }
 
 // function for email add validation
@@ -35,7 +50,6 @@ function checkEmail(email) {
   let special = false;
   let at = [];
   let quotation = [];
-
 
   for (let index = 0; index < email.length; index++) {
     if (email[index] == "@") {
@@ -101,7 +115,6 @@ function checkPassword() {
           if (/[0-9]/.test(password.value)) {
             if (checkEnglishLetters(password.value)) {
               confirmPass(password.value, errLabl);
-
             } else errLabl.innerHTML = "The password must english characters .";
           } else errLabl.innerHTML = "The password must contain at least one numbers in row .";
         } else errLabl.innerHTML = "The password must contain special character at least one.";
@@ -113,22 +126,37 @@ function checkPassword() {
 //function for confirmation the password 
 function confirmPass(pass, errLabl) {
   let confPass = document.getElementById("uConfPassword");
-  if (pass.localeCompare(confPass.value) != 0)
+  if (confPass.value == "" || pass.localeCompare(confPass.value)) {
     errLabl.innerHTML = "The password isn't the same !"
-  saveUser();
+  } else {
+    errLabl.hidden = "true";
+    saveUser();
+    setToCookies();
+  }
+
 }
 
 //saving the user in the array of objects and local storage 
 
 function saveUser() {
-  let obj={
-    UserName:document.getElementById("uUserName").value,
-    Email:document.getElementById("uEmail").value,
-    Password:document.getElementById("uPassword").value
+  let obj = {
+    UserName: document.getElementById("uUserName").value,
+    Email: document.getElementById("uEmail").value,
+    Password: document.getElementById("uPassword").value
   }
   usersArray.push(obj);
-  localStorage.setItem("userList",JSON.stringify(usersArray));
+  localStorage.setItem("userList", JSON.stringify(usersArray));
 
+}
+// this function save logged in user to the cookies for 2 hours
+
+function setToCookies() {
+  let user = document.getElementById("uUserName").value;
+  let d = new Date();
+  d.setTime(d.getTime() + 2 * 60 * 60 * 1000);
+  let expires = "expires=" + d.toUTCString();
+  document.cookie = "User =" + user + ";" + expires;
+  window.location.replace("../pages/dashboard.html");
 }
 
 function checkEnglishLetters(value) {
@@ -140,32 +168,26 @@ function checkEnglishLetters(value) {
   return true;
 }
 //search if the userName exists in the database 
-function searchUser(usr){
-
-  if(localStorage.getItem("userList"))
-  {
-    let users=JSON.parse(localStorage.getItem("userList"));
-    for(let i of users){
-      if(i.UserName==usr)
-      return false;
+function searchUser(usr) {
+  if (localStorage.getItem("userList")) {
+    let users = JSON.parse(localStorage.getItem("userList"));
+    for (let i of users) {
+      if (i.UserName == usr)
+        return true;
     }
-
   }
-  return true;
+  return false;
 
 }
 //search if the email address exists in the database 
-function searchEmail(eml){
-
-  if(localStorage.getItem("userList"))
-  {
-    let users=JSON.parse(localStorage.getItem("userList"));
-    for(let i of users){
-      if(i.Email==eml)
-      return false;
+function searchEmail(eml) {
+  if (localStorage.getItem("userList")) {
+    let users = JSON.parse(localStorage.getItem("userList"));
+    for (let i of users) {
+      if (i.Email == eml)
+        return true;
     }
-
   }
-  return true;
-
+  return false;
 }
+
