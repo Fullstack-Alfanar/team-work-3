@@ -8,21 +8,83 @@ $(document).ready(() => {
     $("#signInDiv").hide();
   });
 });
-
-//signUp
+/*signUp*/
+let usersArray=[];
 var format = /^[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]*$/;
 var english = /^[A-Za-z0-9]*$/;
 //function for userName validation
 //This function first need to check if thi user name already exits in the database
 //, then it must be only in english and number no special characters
-function checkUserName() { }
+function checkUserName() {
+  var userName = document.getElementById("uUserName");
+  let email=document.getElementById("uEmail");
+  if (!english.test(userName.value) || (userName.value.length < 3 && userName.value.length >= 30) || userName.value == "" && !searchUser(userName.value))
+    document.getElementById("errMsgUp").innerHTML = "Invalid username";
+  else if (checkEmail(email.value) && searchEmail(email.value))
+           checkPassword();
+  else document.getElementById("errMsgUp").innerHTML = "Invalid email";
+
+}
 
 // function for email add validation
 // this function will first check if this email address already exists in our database
 //then it must be according to the universal email address validation
-function checkEmail() {
+function checkEmail(email) {
+  let isValid = true;
+  let isQuoted = false;
+  let special = false;
+  let at = [];
+  let quotation = [];
 
+
+  for (let index = 0; index < email.length; index++) {
+    if (email[index] == "@") {
+      at.push(index);
+    }
+
+    if (email[index] == '"') {
+      quotation.push(index);
+    }
+  }
+  for (let i = 0; i < at[at.length - 1]; i++) {
+    if (
+      email[i] == "[" ||
+      email[i] == "]" ||
+      email[i] == '"' ||
+      email[i] == "," ||
+      email[i] == ":" ||
+      email[i] == ";" ||
+      email[i] == "<" ||
+      email[i] == ">" ||
+      email[i] == "(" ||
+      email[i] == ")" ||
+      email[i] == "\\" ||
+      email[i] == " "
+    ) {
+      special = true;
+    }
+  }
+  for (let i = at[at.length - 1]; i < email.length; i++) {
+    if (email[i] == "_") isValid = false;
+  }
+
+  if (
+    quotation[0] == 0 &&
+    at[at.length - 1] - 1 == quotation[quotation.length - 1]
+  ) {
+    isQuoted = true;
+  }
+
+  if (at.length != 1 && !isQuoted) {
+    isValid = false;
+  }
+  if (special && !isQuoted) isValid = false;
+  if (at[at.length - 1] >= 63) isValid = false;
+
+  return isValid;
 }
+
+
 
 //function for password validation
 //this function will check id password is valid according to our rules
@@ -33,11 +95,11 @@ function checkPassword() {
   errLabl.style.color = "red";
   if (password.value.length >= 8) {
     //check if there is at lest on capital letter
-    if (checkCap(password.value, password.value.length) == true) {
-      if (checkLow(password.value, password.value.length) == true) {
-        if (checkSpecialChar(password.value, password.value.length) == true) {
-          if (threeNums(password.value, password.value.length) == true) {
-            if (checkEnglish(password.value, password.value.length) == true) {
+    if (/[A-Z]/.test(password.value)) {
+      if (/[a-z]/.test(password.value)) {
+        if (format.test(password.value)) {
+          if (/[0-9]/.test(password.value)) {
+            if (checkEnglishLetters(password.value)) {
               confirmPass(password.value, errLabl);
 
             } else errLabl.innerHTML = "The password must english characters .";
@@ -59,47 +121,51 @@ function confirmPass(pass, errLabl) {
 //saving the user in the array of objects and local storage 
 
 function saveUser() {
+  let obj={
+    UserName:document.getElementById("uUserName").value,
+    Email:document.getElementById("uEmail").value,
+    Password:document.getElementById("uPassword").value
+  }
+  usersArray.push(obj);
+  localStorage.setItem("userList",JSON.stringify(usersArray));
 
-
 }
 
-/* help functions*/
-//check if capital letter
-function checkCap(str, size) {
-  if (size - 1 == -1) return false;
-  if (str[size - 1] >= "0" && str[size - 1] <= "9")
-    return checkCap(str, size - 1);
-  else if (str[size - 1].toUpperCase() == str[size - 1] && str[size - 1].match(/[A-Z]/i))
-    return true;
-  else return checkCap(str, size - 1);
+function checkEnglishLetters(value) {
+  for (const i of value) {
+    if (!/[a-zA-Z]|[0-9]|[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/.test(i)) {
+      return false;
+    }
+  }
+  return true;
 }
-//check if lowercase letter
-function checkLow(str, size) {
-  if (size - 1 == -1) return false;
-  if (str[size - 1] >= "0" && str[size - 1] <= "9")
-    return checkLow(str, size - 1);
-  else if (str[size - 1].toLowerCase() == str[size - 1] && str[size - 1].match(/[a-z]/i))
-    return true;
-  else return checkLow(str, size - 1);
+//search if the userName exists in the database 
+function searchUser(usr){
+
+  if(localStorage.getItem("userList"))
+  {
+    let users=JSON.parse(localStorage.getItem("userList"));
+    for(let i of users){
+      if(i.UserName==usr)
+      return false;
+    }
+
+  }
+  return true;
+
 }
-//check if special character
-function checkSpecialChar(str, size) {
-  if (size - 1 == -1) return false;
-  str[size - 1].match(format);
-  if (str[size - 1].match(format)) return true;
-  else return checkSpecialChar(str, size - 1);
-}
-//check if special character
-function checkNum(str, size) {
-  if (size - 1 == -1) return false;
-  if (str[size - 1] >= "0" && str[size - 1] <= "9") return true;
-  else return threeNums(str, size - 1);
-}
-//check if it is in english
-function checkEnglish(str, size) {
-  if (size - 1 == -1) return true;
-  //console.log(str[size-1].match(english));
-  if (str[size - 1].match(english) || str[size - 1].match(format))
-    return checkEnglish(str, size - 1);
-  else return false;
+//search if the email address exists in the database 
+function searchEmail(eml){
+
+  if(localStorage.getItem("userList"))
+  {
+    let users=JSON.parse(localStorage.getItem("userList"));
+    for(let i of users){
+      if(i.Email==eml)
+      return false;
+    }
+
+  }
+  return true;
+
 }
