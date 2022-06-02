@@ -68,7 +68,7 @@ function checkPassword() {
 //function for confirmation the password 
 function confirmPass(pass, errLabel) {
     let confPass = $("#IPassword");
-    if (confPass.val() == "" || pass.localeCompare(confPass.val())) {
+    if (confPass.val() == "" || pass.localeCompare(confPass.val()) != 0) {
         errLabel.text("The password isn't the same !");
     } else {
         errLabel.hide();
