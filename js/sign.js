@@ -134,7 +134,7 @@ function checkPassword() {
 //function for confirmation the password 
 function confirmPass(pass, errLabl) {
   let confPass = document.getElementById("uConfPassword");
-  if (confPass.value == "" || pass.localeCompare(confPass.value)) {
+  if (confPass.value == "" || pass.localeCompare(confPass.value) != 0) {
     errLabl.innerHTML = "The password isn't the same !"
   } else {
     errLabl.hidden = "true";
