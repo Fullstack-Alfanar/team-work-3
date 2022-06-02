@@ -18,12 +18,11 @@ $(document).ready(() => {
 let usersArray = [];
 /*First Run */
 //sets data in the array from local storage whenever the page rerun
-function setData() {
+function getData() {
   if (localStorage.getItem("userList"))
     usersArray = JSON.parse(localStorage.getItem("userList"));
-
 }
-setData();
+getData();
 /*signUp*/
 
 var format = /[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
@@ -159,16 +158,7 @@ function saveUser() {
 
 
 }
-//saves data in the array for this page and in general for the other pages in a json file 
-function saveData() {
-  const fs = require('../Database/database.json');
-  fs.writeFile("database.json", localStorage.getItem("userList"), function (err) {
-    if (err) throw err;
-    console.log('complete');
-  }
-  );
 
-}
 // this function save logged in user to the cookies for 2 hours
 
 function setToCookies(email) {
@@ -199,12 +189,10 @@ function searchUser(usr) {
 }
 //search if the email address exists in the database 
 function searchEmail(eml) {
-
   for (let i of usersArray) {
     if (i.Email == eml)
       return true;
   }
-
   return false;
 }
 
