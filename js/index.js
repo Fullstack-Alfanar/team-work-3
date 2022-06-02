@@ -6,4 +6,4 @@ setTimeout(function rerouteHomePage() {
       window.location.replace("../pages/signUp-signIn.html");
     }
   }
-}, 2000);
+}, 4000);
