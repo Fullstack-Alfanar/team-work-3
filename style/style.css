@@ -9,6 +9,7 @@ html,
 body {
   height: 100%;
   background-color: #c5a57c;
+  min-width: 375px;
 }
 
 .Loading-page {
@@ -120,6 +121,8 @@ body {
   background-color: #fee2be;
   padding: 60px 80px;
   border-radius: 15px;
+  -webkit-box-shadow: 5px 5px #6e6c6c;
+          box-shadow: 5px 5px #6e6c6c;
 }
 
 .bodyContainer .container .SwitchBtn {
@@ -229,7 +232,291 @@ body {
 }
 
 .bodyContainer .nerdImg img {
+  -webkit-box-shadow: 5px 5px #6e6c6c;
+          box-shadow: 5px 5px #6e6c6c;
   margin-right: 200px;
   margin-bottom: 50px;
+}
+
+.DashBoardPage .NavBar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: #a66c39;
+  width: 100%;
+}
+
+.DashBoardPage .NavBar .logo-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 33%;
+}
+
+.DashBoardPage .NavBar .logo-section .logo {
+  margin-left: 15%;
+}
+
+.DashBoardPage .NavBar .logo-section .logo img {
+  margin-top: 0.5%;
+  height: 60px;
+}
+
+.DashBoardPage .NavBar .logo-section .logo-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 33%;
+}
+
+.DashBoardPage .NavBar .logo-section .logo-title span {
+  margin-top: auto;
+  font-size: 22px;
+  color: wheat;
+  text-shadow: 3px 3px #000000;
+}
+
+.DashBoardPage .NavBar .title-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 33%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.DashBoardPage .NavBar .title-section label {
+  margin-top: auto;
+  margin-bottom: auto;
+  font-size: 32px;
+  color: wheat;
+  text-shadow: 3px 3px #000000;
+}
+
+.DashBoardPage .logout-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: auto;
+  margin-bottom: auto;
+  width: 33%;
+  /* logoutBtn links on mouse-over */
+  /* Current/active logoutBtn link */
+  /* Add responsiveness - will automatically display the logoutBtn vertically instead of horizontally on screens less than 500 pixels */
+}
+
+.DashBoardPage .logout-section a {
+  float: left;
+  text-align: center;
+  padding: 12px;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.DashBoardPage .logout-section a:hover {
+  background-color: #597b6b;
+}
+
+.DashBoardPage .logout-section .active {
+  background-color: #04AA6D;
+}
+
+@media screen and (max-width: 500px) {
+  .DashBoardPage .logout-section a {
+    float: none;
+    display: block;
+  }
+}
+
+.DashBoardPage .h3 {
+  margin-top: 2%;
+  margin-left: 10%;
+}
+
+.DashBoardPage .h3 h3 {
+  color: white;
+  font-size: 32px;
+}
+
+.DashBoardPage .dashboard-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.DashBoardPage .dashboard-section .Table {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(250px, 0.2fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(250px, 0.2fr));
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 20px;
+  width: 90%;
+}
+
+.DashBoardPage .dashboard-section .card {
+  position: relative;
+  width: 250px;
+  height: 350px;
+  border-radius: 20px;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.DashBoardPage .dashboard-section .card .card-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 50%;
+}
+
+.DashBoardPage .dashboard-section .card .card-description {
+  height: 50%;
+  padding: 15px;
+}
+
+.DashBoardPage .dashboard-section .card:nth-child(1) {
+  background: url(../images/books/1.jpg) center no-repeat;
+  background-size: cover;
+}
+
+.DashBoardPage .dashboard-section .card:nth-child(2) {
+  background: url(../images/books/2.jpg) center no-repeat;
+  background-size: cover;
+}
+
+.DashBoardPage .dashboard-section .card:nth-child(3) {
+  background: url(../images/books/3.jpg) center no-repeat;
+  background-size: cover;
+}
+
+.DashBoardPage .dashboard-section .card:nth-child(4) {
+  background: url(../images/books/4.jpg) center no-repeat;
+  background-size: cover;
+}
+
+.DashBoardPage .dashboard-section .card:nth-child(5) {
+  background: url(../images/books/5.jpg) center no-repeat;
+  background-size: cover;
+}
+
+.DashBoardPage .dashboard-section .card:nth-child(6) {
+  background: url(../images/books/6.jpg) center no-repeat;
+  background-size: cover;
+}
+
+.DashBoardPage .dashboard-section .card:nth-child(7) {
+  background: url(../images/books/7.jpg) center no-repeat;
+  background-size: cover;
+}
+
+.DashBoardPage .dashboard-section .card:nth-child(8) {
+  background: url(../images/books/8.jpg) center no-repeat;
+  background-size: cover;
+}
+
+.DashBoardPage .dashboard-section .card:nth-child(9) {
+  background: url(../images/books/9.jpg) center no-repeat;
+  background-size: cover;
+}
+
+.DashBoardPage .dashboard-section .card:nth-child(10) {
+  background: url(../images/books/10.jpg) center no-repeat;
+  background-size: cover;
+}
+
+.DashBoardPage .dashboard-section .card:nth-child(11) {
+  background: url(../images/books/11.jpg) center no-repeat;
+  background-size: cover;
+}
+
+.DashBoardPage .dashboard-section .card:nth-child(12) {
+  background: url(../images/books/12.jpg) center no-repeat;
+  background-size: cover;
+}
+
+.DashBoardPage .dashboard-section .card:nth-child(13) {
+  background: url(../images/books/13.jpg) center no-repeat;
+  background-size: cover;
+}
+
+.DashBoardPage .dashboard-section .card:nth-child(14) {
+  background: url(../images/books/14.jpg) center no-repeat;
+  background-size: cover;
+}
+
+.DashBoardPage .dashboard-section .card:nth-child(15) {
+  background: url(../images/books/15.jpg) center no-repeat;
+  background-size: cover;
+}
+
+.DashBoardPage .dashboard-section .card::before,
+.DashBoardPage .dashboard-section .card::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: calc(60% + 35px);
+  background-color: rgba(255, 255, 255, 0.612);
+  -webkit-transition: -webkit-transform .5s .25s ease-in;
+  transition: -webkit-transform .5s .25s ease-in;
+  transition: transform .5s .25s ease-in;
+  transition: transform .5s .25s ease-in, -webkit-transform .5s .25s ease-in;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.DashBoardPage .dashboard-section .card::before {
+  top: 0;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 45%, 0% 100%);
+          clip-path: polygon(0 0, 100% 0, 100% 45%, 0% 100%);
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+}
+
+.DashBoardPage .dashboard-section .card::after {
+  bottom: 0;
+  -webkit-clip-path: polygon(0 55%, 100% 0, 100% 100%, 0% 100%);
+          clip-path: polygon(0 55%, 100% 0, 100% 100%, 0% 100%);
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+}
+
+.DashBoardPage .dashboard-section .card-content {
+  opacity: 0;
+  height: 100%;
+  -webkit-transition: opacity 0.25s;
+  transition: opacity 0.25s;
+}
+
+.DashBoardPage .dashboard-section .card:hover::before,
+.DashBoardPage .dashboard-section .card:hover::after {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
+.DashBoardPage .dashboard-section .card:hover .card-content {
+  opacity: 1;
+  -webkit-transition-delay: 0.75s;
+          transition-delay: 0.75s;
 }
 /*# sourceMappingURL=style.css.map */
