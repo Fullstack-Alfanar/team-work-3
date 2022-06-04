@@ -1,6 +1,5 @@
 let usersArray = [];
 $(document).ready(() => {
-    $("#reNewPass").hide();
     $("#resPass").click(() => {
         let ExistEmail = false;
         for (let i of usersArray) {
@@ -11,7 +10,7 @@ $(document).ready(() => {
         }
         if (ExistEmail) {
             $("#checkEmailDiv").hide();
-            $("#reNewPass").show();
+            $("#reNewPass").css("display", "flex");
         }
         else {
             $("#ErrorMsg").text("Email doesn't Exist").css("color", "red");
@@ -71,7 +70,6 @@ function confirmPass(pass, errLabel) {
     if (confPass.val() == "" || pass.localeCompare(confPass.val()) != 0) {
         errLabel.text("The password isn't the same !");
     } else {
-        errLabel.hide();
         return true;
     }
 
