@@ -70,7 +70,6 @@ function confirmPass(pass, errLabel) {
     if (confPass.val() == "" || pass.localeCompare(confPass.val()) != 0) {
         errLabel.text("The password isn't the same !");
     } else {
-        errLabel.hide();
         return true;
     }
 
