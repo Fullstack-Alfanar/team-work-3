@@ -103,6 +103,10 @@ body {
   display: none;
 }
 
+.bodyContainer #reNewPass {
+  display: none;
+}
+
 .bodyContainer .container {
   z-index: 1;
   display: -webkit-box;
