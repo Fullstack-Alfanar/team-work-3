@@ -129,6 +129,12 @@ body {
           box-shadow: 5px 5px #6e6c6c;
 }
 
+@media screen and (max-width: 500px) {
+  .bodyContainer .container {
+    padding: 30px 40px;
+  }
+}
+
 .bodyContainer .container .SwitchBtn {
   width: 90%;
   display: -webkit-box;
@@ -301,6 +307,16 @@ body {
   text-shadow: 3px 3px #000000;
 }
 
+@media screen and (max-width: 500px) {
+  .DashBoardPage .NavBar .title-section label {
+    font-size: 26px;
+  }
+  .DashBoardPage .NavBar .logo-title span {
+    -webkit-transform: translate(-100%, 0);
+            transform: translate(-100%, 0);
+  }
+}
+
 .DashBoardPage .logout-section {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -330,7 +346,7 @@ body {
 }
 
 .DashBoardPage .logout-section .active {
-  background-color: #04AA6D;
+  background-color: #04aa6d;
 }
 
 @media screen and (max-width: 500px) {
@@ -481,10 +497,10 @@ body {
   width: 100%;
   height: calc(60% + 35px);
   background-color: rgba(255, 255, 255, 0.612);
-  -webkit-transition: -webkit-transform .5s .25s ease-in;
-  transition: -webkit-transform .5s .25s ease-in;
-  transition: transform .5s .25s ease-in;
-  transition: transform .5s .25s ease-in, -webkit-transform .5s .25s ease-in;
+  -webkit-transition: -webkit-transform 0.5s 0.25s ease-in;
+  transition: -webkit-transform 0.5s 0.25s ease-in;
+  transition: transform 0.5s 0.25s ease-in;
+  transition: transform 0.5s 0.25s ease-in, -webkit-transform 0.5s 0.25s ease-in;
   z-index: -1;
   overflow: hidden;
 }
