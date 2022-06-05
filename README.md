@@ -72,7 +72,7 @@ _**The dashboard page include the following:**_
 # Project Flowchart
 <center>
 
-![alt text](images\FLowchart.jpg)
+![alt text](/images/FLowchart.jpg)
 
 
 _**©NERDS**_
