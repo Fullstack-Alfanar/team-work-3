@@ -13,6 +13,7 @@ html,
 body {
   height: 100%;
   background-color: $backGourdColor;
+  min-width: 375px;
 }
 
 .Loading-page {
@@ -47,7 +48,6 @@ body {
     }
 
     @keyframes rotate {
-
       0%,
       100% {
         transform: scale(1) rotate(360deg);
@@ -78,6 +78,9 @@ body {
     display: none;
   }
 
+  #reNewPass {
+    display: none;
+  }
 
   .container {
     z-index: 1;
@@ -88,6 +91,11 @@ body {
     background-color: $containerColor;
     padding: 60px 80px;
     border-radius: 15px;
+    box-shadow: 5px 5px rgb(110, 108, 108);
+
+    @media screen and (max-width: 500px) {
+      padding: 30px 40px;
+    }
 
     .SwitchBtn {
       width: 90%;
@@ -135,12 +143,35 @@ body {
 
       input,
       button {
+        letter-spacing: 1px;
         background: none;
+        color: #000;
         padding: 10px;
         margin-top: 10px;
         font-size: large;
-        border: 2px solid #000000;
+        outline: 1px solid #000;
+        position: relative;
         border-radius: 15px;
+        overflow: hidden;
+        transition: color 1s;
+      }
+      button:hover {
+        color: #fff;
+      }
+      button::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -50%;
+        width: 0;
+        height: 100%;
+        background-color: rgb(97, 60, 60);
+        transform: skew(35deg);
+        z-index: -1;
+        transition: width 1s;
+      }
+      button:hover::before {
+        width: 160%;
       }
     }
   }
@@ -173,8 +204,193 @@ body {
     }
 
     img {
+      box-shadow: 5px 5px rgb(110, 108, 108);
       margin-right: 200px;
       margin-bottom: 50px;
+    }
+  }
+}
+
+.DashBoardPage {
+  .NavBar {
+    display: flex;
+    justify-content: space-between;
+    background-color: #a66c39;
+    width: 100%;
+
+    .logo-section {
+      display: flex;
+      width: 33%;
+
+      .logo {
+        margin-left: 15%;
+
+        img {
+          margin-top: 0.5%;
+          height: 60px;
+        }
+      }
+
+      .logo-title {
+        display: flex;
+        width: 33%;
+
+        span {
+          margin-top: auto;
+          font-size: 22px;
+          color: wheat;
+          text-shadow: 3px 3px #000000;
+        }
+      }
+    }
+
+    .title-section {
+      display: flex;
+      width: 33%;
+      justify-content: center;
+
+      label {
+        margin-top: auto;
+        margin-bottom: auto;
+        font-size: 32px;
+        color: wheat;
+        text-shadow: 3px 3px #000000;
+      }
+    }
+    @media screen and (max-width: 500px) {
+      .title-section label {
+        font-size: 26px;
+      }
+      .logo-title span {
+        transform: translate(-100%, 0);
+      }
+    }
+  }
+
+  .logout-section {
+    display: flex;
+    justify-content: center;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 33%;
+
+    a {
+      float: left;
+      text-align: center;
+      padding: 12px;
+      color: white;
+      text-decoration: none;
+      font-size: 17px;
+    }
+
+    /* logoutBtn links on mouse-over */
+    a:hover {
+      background-color: rgb(89, 123, 107);
+    }
+
+    /* Current/active logoutBtn link */
+    .active {
+      background-color: #04aa6d;
+    }
+
+    /* Add responsiveness - will automatically display the logoutBtn vertically instead of horizontally on screens less than 500 pixels */
+    @media screen and (max-width: 500px) {
+      a {
+        float: none;
+        display: block;
+      }
+    }
+  }
+
+  .h3 {
+    margin-top: 2%;
+    margin-left: 10%;
+
+    h3 {
+      color: rgb(255, 255, 255);
+      font-size: 32px;
+    }
+  }
+
+  .dashboard-section {
+    display: flex;
+    justify-content: center;
+
+    .Table {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 0.2fr));
+      justify-content: center;
+      gap: 20px;
+      width: 90%;
+    }
+
+    .card {
+      position: relative;
+      width: 250px;
+      height: 350px;
+      border-radius: 20px;
+      z-index: 1;
+      overflow: hidden;
+
+      .card-title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50%;
+      }
+
+      .card-description {
+        height: 50%;
+        padding: 15px;
+      }
+    }
+
+    @for $i from 1 to 16 {
+      .card:nth-child(#{$i}) {
+        background: url(../images/books/#{$i}.jpg) center no-repeat;
+        background-size: cover;
+      }
+    }
+
+    .card::before,
+    .card::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: calc(60% + 35px);
+      background-color: rgba(255, 255, 255, 0.612);
+      transition: transform 0.5s 0.25s ease-in;
+      z-index: -1;
+      overflow: hidden;
+    }
+
+    .card::before {
+      top: 0;
+      clip-path: polygon(0 0, 100% 0, 100% 45%, 0% 100%);
+      transform: translateY(-100%);
+    }
+
+    .card::after {
+      bottom: 0;
+      clip-path: polygon(0 55%, 100% 0, 100% 100%, 0% 100%);
+      transform: translateY(100%);
+    }
+
+    .card-content {
+      opacity: 0;
+      height: 100%;
+      transition: opacity.25s;
+    }
+
+    .card:hover::before,
+    .card:hover::after {
+      transform: translateY(0);
+    }
+
+    .card:hover .card-content {
+      opacity: 1;
+      transition-delay: 0.75s;
     }
   }
 }

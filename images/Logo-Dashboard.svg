@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="281.461" height="281.018" viewBox="0 0 281.461 281.018">
+    <defs>
+        <style>.a{fill:#3f3d56;}.b{fill:#006e0b;}.c{fill:#00a110;}.d{opacity:0.7;}.e,.i{opacity:0.1;}.f{fill:url(#c);}.g{fill:#535461;}.h{fill:#a15710;}.j{fill:#fff;stroke:#343434;stroke-width:2px;font-size:46px;}.j,.k{font-family:SegoeUI, Segoe UI;}.k{fill:rgba(255,255,255,0.14);font-size:73px;}.l{filter:url(#l);}.m{filter:url(#j);}.n{filter:url(#h);}.o{filter:url(#f);}.p{filter:url(#a);}</style>
+        <filter id="a" x="57.191" y="34.008" width="180.63" height="194.01" filterUnits="userSpaceOnUse">
+            <feOffset dx="10" dy="13" input="SourceAlpha" />
+            <feGaussianBlur stdDeviation="3" result="b" />
+            <feFlood flood-opacity="0.161" />
+            <feComposite operator="in" in2="b" />
+            <feComposite in="SourceGraphic" />
+        </filter>
+        <linearGradient id="c" x1="0.5" y1="1" x2="0.5" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="gray" stop-opacity="0.251" />
+            <stop offset="0.535" stop-color="gray" stop-opacity="0.122" />
+            <stop offset="1" stop-color="gray" stop-opacity="0.102" />
+        </linearGradient>
+        <filter id="f" x="68.502" y="35.357" width="49.309" height="142.256" filterUnits="userSpaceOnUse">
+            <feOffset dx="3" dy="3" input="SourceAlpha" />
+            <feGaussianBlur stdDeviation="3" result="g" />
+            <feFlood flood-opacity="0.4" />
+            <feComposite operator="in" in2="g" />
+            <feComposite in="SourceGraphic" />
+        </filter>
+        <filter id="h" x="101.768" y="35.357" width="49.309" height="142.256" filterUnits="userSpaceOnUse">
+            <feOffset dx="3" dy="3" input="SourceAlpha" />
+            <feGaussianBlur stdDeviation="3" result="i" />
+            <feFlood flood-opacity="0.4" />
+            <feComposite operator="in" in2="i" />
+            <feComposite in="SourceGraphic" />
+        </filter>
+        <filter id="j" x="133.249" y="31.461" width="80.273" height="146.127" filterUnits="userSpaceOnUse">
+            <feOffset dx="3" dy="3" input="SourceAlpha" />
+            <feGaussianBlur stdDeviation="3" result="k" />
+            <feFlood flood-opacity="0.4" />
+            <feComposite operator="in" in2="k" />
+            <feComposite in="SourceGraphic" />
+        </filter>
+        <filter id="l" x="60.679" y="197.018" width="164" height="84" filterUnits="userSpaceOnUse">
+            <feOffset dx="5" dy="2" input="SourceAlpha" />
+            <feGaussianBlur stdDeviation="3" result="m" />
+            <feFlood flood-opacity="0.161" />
+            <feComposite operator="in" in2="m" />
+            <feComposite in="SourceGraphic" />
+        </filter>
+    </defs>
+    <g transform="translate(155.679 -2115.982)">
+        <path class="a" d="M624.17,555.475a51.653,51.653,0,0,1-12.806-1.656l-.824-.228-.765-.383c-27.647-13.862-50.972-32.172-69.326-54.421a206.018,206.018,0,0,1-35-62.156,239.232,239.232,0,0,1-13.528-84.274c.012-.6.022-1.067.022-1.387,0-13.939,7.737-26.17,19.712-31.159,9.165-3.819,92.375-38,98.387-40.466,11.323-5.673,23.4-.938,25.335-.11,4.336,1.773,81.258,33.235,97.881,41.15,17.132,8.158,21.7,22.813,21.7,30.187,0,33.382-5.781,64.579-17.183,92.727a214.711,214.711,0,0,1-38.585,62.184c-31.5,35.446-63,48.012-63.309,48.123a34.424,34.424,0,0,1-11.708,1.87Zm-7.41-18.353c2.732.612,9.02,1.531,13.119.036,5.207-1.9,31.578-15.574,56.22-43.3,34.047-38.315,51.323-86.48,51.348-143.157-.061-1.148-.876-9.338-11.722-14.5-16.3-7.762-96.255-40.456-97.061-40.785l-.221-.094c-1.676-.7-7.008-2.181-10.684-.255l-.736.343c-.891.366-89.22,36.645-98.64,40.569-6.59,2.746-8.938,9.548-8.938,15,0,.4-.01.978-.025,1.726C508.669,391.478,517.643,486.9,616.76,537.122Z" transform="translate(-641.08 1839.385)" />
+        <path class="b" d="M613.7,287.3s-89.131,36.607-98.681,40.587-14.325,13.529-14.325,23.079S493.53,485.132,613.7,545.382c0,0,10.906,3.018,19.181,0S746.2,491.432,746.2,350.573c0,0,0-14.325-16.712-22.283S631.977,287.3,631.977,287.3,622.054,282.928,613.7,287.3Z" transform="translate(-641.08 1839.385)" />
+        <g class="p" transform="matrix(1, 0, 0, 1, -155.68, 2115.98)">
+            <path class="c" d="M575.037,286.64s-58.66,24.092-64.945,26.711-9.427,8.9-9.427,15.189-4.714,88.3,74.372,127.948c0,0,7.178,1.986,12.624,0s74.58-35.506,74.58-128.209c0,0,0-9.427-11-14.665s-64.175-26.973-64.175-26.973S580.536,283.759,575.037,286.64Z" transform="translate(-443.42 -251.35)" />
+        </g>
+        <g transform="translate(-318.994 -2)">
+            <g class="d" transform="translate(15.61 1590.098)">
+                <g class="e">
+                    <path class="f" d="M218.832,566.043V696.9H251.8V566.043H218.832Z" />
+                </g>
+                <g class="e">
+                    <path class="f" d="M253.866,566.043V696.9h32.972V566.043H253.866Z" />
+                </g>
+                <g class="e">
+                    <path class="f" d="M352.6,688.383l-27.35-102.545h0l-1.593-5.973h0l-4.78-17.921-31.859,8.5,4.78,17.921h0l1.269,4.757,21.567,80.863h0l1.593,5.973h0l4.514,16.925Z" />
+                </g>
+            </g>
+            <g class="o" transform="matrix(1, 0, 0, 1, 163.32, 2117.98)">
+                <rect class="g" width="31.309" height="124.256" transform="translate(74.5 41.36)" />
+            </g>
+            <rect class="h" width="31.309" height="5.87" transform="translate(237.817 2176.951)" />
+            <rect class="h" width="31.309" height="5.87" transform="translate(237.817 2261.092)" />
+            <rect class="i" width="7.827" height="124.256" transform="translate(261.299 2159.339)" />
+            <g class="n" transform="matrix(1, 0, 0, 1, 163.32, 2117.98)">
+                <rect class="g" width="31.309" height="124.256" transform="translate(107.77 41.36)" />
+            </g>
+            <rect class="h" width="31.309" height="5.87" transform="translate(271.083 2176.951)" />
+            <rect class="h" width="31.309" height="5.87" transform="translate(271.083 2261.092)" />
+            <rect class="i" width="7.827" height="124.256" transform="translate(294.564 2159.339)" />
+            <g class="m" transform="matrix(1, 0, 0, 1, 163.32, 2117.98)">
+                <rect class="g" width="31.309" height="124.256" transform="matrix(0.97, -0.26, 0.26, 0.97, 139.25, 45.53)" />
+            </g>
+            <rect class="h" width="31.309" height="5.87" transform="matrix(0.966, -0.258, 0.258, 0.966, 307.103, 2180.527)" />
+            <rect class="h" width="31.309" height="5.87" transform="matrix(0.966, -0.258, 0.258, 0.966, 328.787, 2261.827)" />
+            <rect class="i" width="7.827" height="124.256" transform="matrix(0.966, -0.258, 0.258, 0.966, 325.253, 2157.46)" />
+        </g>
+    </g>
+</svg>
