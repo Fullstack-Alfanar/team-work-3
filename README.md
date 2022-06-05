@@ -10,11 +10,11 @@ The web page very easy to use and accessible to everyone at any age .
 We used html for the main layout of the page, scss for designing (more flexible than css ), and used JavaScript and Json for the scripting/coding part.
 
 ## Instructions
-- copy http repository: https://github.com/Fullstack-Alfanar/team-work2.git
+- copy http repository: `https://github.com/Fullstack-Alfanar/team-work2.git`
 - open Visual Studio Code
 - open a new terminal
-- type git clone and paste the link
-- type a command code .
+- type `git clone` and paste the link
+- type a command `code .`
 ## Sections
 - Index/ Loading page.
 - Sign-up / sign-in page.
