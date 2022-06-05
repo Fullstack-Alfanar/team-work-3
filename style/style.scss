@@ -143,12 +143,35 @@ body {
 
       input,
       button {
+        letter-spacing: 1px;
         background: none;
+        color: #000;
         padding: 10px;
         margin-top: 10px;
         font-size: large;
-        border: 2px solid #000000;
+        outline: 1px solid #000;
+        position: relative;
         border-radius: 15px;
+        overflow: hidden;
+        transition: color 1s;
+      }
+      button:hover {
+        color: #fff;
+      }
+      button::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -50%;
+        width: 0;
+        height: 100%;
+        background-color: rgb(97, 60, 60);
+        transform: skew(35deg);
+        z-index: -1;
+        transition: width 1s;
+      }
+      button:hover::before {
+        width: 160%;
       }
     }
   }
