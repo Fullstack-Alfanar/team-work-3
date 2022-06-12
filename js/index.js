@@ -1,9 +1,9 @@
 setTimeout(function rerouteHomePage() {
   {
     if (getCookies()) {
-      window.location.replace("pages/dashboard.html");
+      window.location.replace("/pages/dashboard.html");
     } else {
-      window.location.replace("pages/signUp-signIn.html");
+      window.location.replace("/pages/signUp-signIn.html");
     }
   }
 }, 2000);
