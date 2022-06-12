@@ -91,7 +91,7 @@ body {
 }
 
 .bodyContainer header {
-  background-image: url("../images/navbar.png");
+  background-image: url("/images/navbar.png");
   background-repeat: repeat-x;
   height: 80px;
   width: 100%;
@@ -444,77 +444,77 @@ body {
 }
 
 .DashBoardPage .dashboard-section .card:nth-child(1) {
-  background: url(../images/books/1.jpg) center no-repeat;
+  background: url(/images/books/1.jpg) center no-repeat;
   background-size: cover;
 }
 
 .DashBoardPage .dashboard-section .card:nth-child(2) {
-  background: url(../images/books/2.jpg) center no-repeat;
+  background: url(/images/books/2.jpg) center no-repeat;
   background-size: cover;
 }
 
 .DashBoardPage .dashboard-section .card:nth-child(3) {
-  background: url(../images/books/3.jpg) center no-repeat;
+  background: url(/images/books/3.jpg) center no-repeat;
   background-size: cover;
 }
 
 .DashBoardPage .dashboard-section .card:nth-child(4) {
-  background: url(../images/books/4.jpg) center no-repeat;
+  background: url(/images/books/4.jpg) center no-repeat;
   background-size: cover;
 }
 
 .DashBoardPage .dashboard-section .card:nth-child(5) {
-  background: url(../images/books/5.jpg) center no-repeat;
+  background: url(/images/books/5.jpg) center no-repeat;
   background-size: cover;
 }
 
 .DashBoardPage .dashboard-section .card:nth-child(6) {
-  background: url(../images/books/6.jpg) center no-repeat;
+  background: url(/images/books/6.jpg) center no-repeat;
   background-size: cover;
 }
 
 .DashBoardPage .dashboard-section .card:nth-child(7) {
-  background: url(../images/books/7.jpg) center no-repeat;
+  background: url(/images/books/7.jpg) center no-repeat;
   background-size: cover;
 }
 
 .DashBoardPage .dashboard-section .card:nth-child(8) {
-  background: url(../images/books/8.jpg) center no-repeat;
+  background: url(/images/books/8.jpg) center no-repeat;
   background-size: cover;
 }
 
 .DashBoardPage .dashboard-section .card:nth-child(9) {
-  background: url(../images/books/9.jpg) center no-repeat;
+  background: url(/images/books/9.jpg) center no-repeat;
   background-size: cover;
 }
 
 .DashBoardPage .dashboard-section .card:nth-child(10) {
-  background: url(../images/books/10.jpg) center no-repeat;
+  background: url(/images/books/10.jpg) center no-repeat;
   background-size: cover;
 }
 
 .DashBoardPage .dashboard-section .card:nth-child(11) {
-  background: url(../images/books/11.jpg) center no-repeat;
+  background: url(/images/books/11.jpg) center no-repeat;
   background-size: cover;
 }
 
 .DashBoardPage .dashboard-section .card:nth-child(12) {
-  background: url(../images/books/12.jpg) center no-repeat;
+  background: url(/images/books/12.jpg) center no-repeat;
   background-size: cover;
 }
 
 .DashBoardPage .dashboard-section .card:nth-child(13) {
-  background: url(../images/books/13.jpg) center no-repeat;
+  background: url(/images/books/13.jpg) center no-repeat;
   background-size: cover;
 }
 
 .DashBoardPage .dashboard-section .card:nth-child(14) {
-  background: url(../images/books/14.jpg) center no-repeat;
+  background: url(/images/books/14.jpg) center no-repeat;
   background-size: cover;
 }
 
 .DashBoardPage .dashboard-section .card:nth-child(15) {
-  background: url(../images/books/15.jpg) center no-repeat;
+  background: url(/images/books/15.jpg) center no-repeat;
   background-size: cover;
 }
 

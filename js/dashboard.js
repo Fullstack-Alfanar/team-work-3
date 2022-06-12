@@ -1,7 +1,7 @@
 $(document).ready(() => {
   $("#logoutBtn").click(() => {
     document.cookie = "Email =" + "" + ";" + "expires=" + ";path=/";
-    window.location.replace("../index.html");
+    window.location.replace("/index.html");
   });
   function getUser() {
     let cookies = document.cookie;
@@ -10,7 +10,7 @@ $(document).ready(() => {
   }
   email = getUser();
   if (email == "") {
-    window.location.replace("../index.html");
+    window.location.replace("/index.html");
   }
   getData();
 
