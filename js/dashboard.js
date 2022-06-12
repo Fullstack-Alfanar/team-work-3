@@ -10,7 +10,7 @@ $(document).ready(() => {
   }
   email = getUser();
   if (email == "") {
-    window.location.replace("/index.html");
+    window.location.replace("../index.html");
   }
   getData();
 

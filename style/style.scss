@@ -66,7 +66,7 @@ body {
   align-items: center;
 
   header {
-    background-image: url("/images/navbar.png");
+    background-image: url("../images/navbar.png");
     background-repeat: repeat-x;
     height: 80px;
     width: 100%;
@@ -347,7 +347,7 @@ body {
 
     @for $i from 1 to 16 {
       .card:nth-child(#{$i}) {
-        background: url(/images/books/#{$i}.jpg) center no-repeat;
+        background: url(../images/books/#{$i}.jpg) center no-repeat;
         background-size: cover;
       }
     }
