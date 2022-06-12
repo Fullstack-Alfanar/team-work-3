@@ -166,7 +166,7 @@ function setToCookies(email) {
   d.setTime(d.getTime() + 2 * 60 * 60 * 1000);
   let expires = "expires=" + d.toUTCString();
   document.cookie = "Email =" + email + ";" + expires + ";path=/";
-  window.location.replace("../pages/dashboard.html");
+  window.location.replace("./pages/dashboard.html");
 }
 
 function checkEnglishLetters(value) {
